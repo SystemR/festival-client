@@ -1,0 +1,5 @@
+<app-calendar *ngIf='isDatesShown'></app-calendar>
+<div *ngIf='displayedFilmBoxes === 0' class='no-result' [class.has-dates]='isDatesShown'>
+  No films match the specified filter</div>
+<app-film-box *ngFor='let filmBox of filmBoxes' [filmBox]='filmBox' [animStep]='animStep' [isExpanded]='currentFilmBox === filmBox'
+  (select)='setCurrentFilm($event)' [hidden]='!filmBox.isDisplayed'></app-film-box>

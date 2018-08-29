@@ -1,0 +1,144 @@
+:host {
+  display: block;
+  padding: 10px 35px;
+  position: relative;
+}
+
+.search {
+  float: right;
+  margin: 0;
+  margin-top: 8px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: fadeInLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  label {
+    margin: 0;
+    padding: 0;
+  }
+
+  svg {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  input {
+    padding: 0;
+    outline: 0;
+    border: 0;
+    font-size: 26px;
+    font-weight: 300;
+    margin: 0;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+
+    &:focus,
+    &.active {
+      padding: 0 5px;
+      width: 200px;
+    }
+  }
+}
+
+@keyframes expandHr {
+  from {
+    left: 50%;
+    right: 50%;
+    opacity: 0;
+  }
+
+  to {
+    left: 35px;
+    right: 35px;
+    opacity: 1;
+  }
+}
+
+@keyframes expandHrMobile {
+  from {
+    left: 50%;
+    right: 50%;
+    opacity: 0;
+  }
+
+  to {
+    left: 15px;
+    right: 15px;
+    opacity: 1;
+  }
+}
+
+hr {
+  border-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  margin: 0;
+  animation-name: expandHr;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.menu {
+  background: #fff;
+  .item {
+    cursor: pointer;
+    outline: 0;
+    padding: 15px 15px 13px 15px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 25px;
+    animation-name: fadeInRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    &:nth-child(2) {
+      animation-duration: 1.1s;
+    }
+
+    border-bottom: 2px solid transparent;
+    &.active {
+      border-bottom: 2px solid #000;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :host {
+    padding: 5px 15px;
+  }
+
+  hr {
+    border-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    margin: 0;
+    animation-name: expandHrMobile;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+  }
+
+  .menu {
+    .item {
+      padding: 10px 10px 8px 10px; // minus 2px bottom
+      margin-right: 10px;
+    }
+  }
+
+  .search {
+    animation-name: fadeInUp;
+    margin-top: 7px;
+    margin-right: 0;
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+    input {
+      font-size: 20px;
+      &:focus,
+      &.active {
+        width: 125px;
+      }
+    }
+  }
+}

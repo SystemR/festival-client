@@ -1,0 +1,18 @@
+<hr>
+<div class='menu'>
+  <div class='search'>
+    <label for='search'>
+      <svg viewBox="0 0 24 24" width="22" height="22">
+        <path d="M24 21.172l-5.66-5.66C19.387 13.932 20 12.038 20 10c0-5.523-4.477-10-10-10S0 4.477 0 10s4.477 10 10 10c2.038 0 3.932-.613 5.512-1.66l5.66 5.66L24 21.172zM4 10c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 6-6 6-6-2.69-6-6z"></path>
+      </svg>
+    </label>
+    <input id='search' type='text' autocomplete='off' [class.active]='searchString' (keyup)='search(searchString)' [(ngModel)]='searchString'>
+  </div>
+  <div class='item' routerLink='/films' routerLinkActive='active'>
+    <a>All Films</a>
+  </div>
+  <div class='item' routerLink='/dates' routerLinkActive='active'>
+    <a>By Dates</a>
+  </div>
+</div>
+<hr>

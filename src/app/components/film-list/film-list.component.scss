@@ -1,0 +1,29 @@
+:host {
+  position: relative;
+  display: block;
+}
+
+app-calendar {
+  float: left;
+}
+
+.no-result {
+  font-size: 32px;
+  float: left;
+
+  &.has-dates {
+    margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .no-result {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 0;
+
+    &.has-dates {
+      margin-left: 0;
+    }
+  }
+}

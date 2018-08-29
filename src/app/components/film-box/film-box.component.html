@@ -1,0 +1,23 @@
+<div class='box' [style.background-image]='styleImg' (click)='selectBox()'>
+  <div class='box-content'>
+    <div class='title'>{{film.title}}</div>
+    <div class='desc'>{{film.desc | trimLength}}</div>
+  </div>
+</div>
+<div class='full' *ngIf='isExpanded'>
+  <button type="button" class="close" aria-label="Close" (click)='close()'>
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class='title'>{{film.title}}</div>
+  <div *ngIf='isShowingTicketPage && film.ticket'>
+    <div class='bar'>
+      <div class='float-right d-none d-sm-inline' *ngIf='!isEleventLoaded'>Loading Elevent...</div>
+      <a (click)='isShowingTicketPage = false' class='pointer'>&laquo;
+        <span class='d-none d-sm-inline'>Back to</span> Film Information</a>
+    </div>
+    <app-elevent [link]='film.ticket' (load)='isEleventLoaded = true'></app-elevent>
+  </div>
+  <div *ngIf='!isShowingTicketPage'>
+    <app-film-detail [film]='film' [filmDates]='filmDates' (buyTicket)='showTicketPage()'></app-film-detail>
+  </div>
+</div>

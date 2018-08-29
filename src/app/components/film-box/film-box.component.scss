@@ -1,0 +1,71 @@
+:host {
+  position: absolute;
+  display: block;
+  min-height: 225px;
+  transition: all 0.25s ease-in-out;
+  width: 0;
+  top: -50px;
+  left: 0;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  &.expanded {
+    transition: none;
+    z-index: 1000;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+
+    .box {
+      display: none;
+    }
+  }
+}
+
+.box {
+  cursor: pointer;
+  width: 100%;
+  min-height: 225px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  .title {
+    font-weight: bold;
+  }
+  .box-content {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 10px;
+  }
+}
+
+.full {
+  min-height: 300px;
+  background: #fff;
+  padding: 25px;
+  height: 100%;
+
+  .title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+}
+
+.bar {
+  background: #f1f1f1;
+  font-size: 18px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .box:last-child {
+    margin-bottom: 100px;
+  }
+
+  .full {
+    padding: 10px;
+  }
+}

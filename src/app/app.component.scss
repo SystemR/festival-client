@@ -1,0 +1,35 @@
+.heading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #fff;
+  padding-bottom: 5px;
+}
+
+.main-container {
+  margin-top: 150px;
+  padding: 10px 35px 50px 35px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 10px 35px;
+  background: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-container {
+    margin-top: 200px;
+    padding: 5px 15px 35px 15px;
+  }
+
+  .footer {
+    padding: 5px 15px;
+  }
+}

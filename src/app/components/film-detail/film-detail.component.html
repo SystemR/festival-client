@@ -1,0 +1,65 @@
+<app-you-tube class='trailer' *ngIf='film.trailer' [link]='film.trailer'></app-you-tube>
+<div class='row'>
+  <div class='col-sm-8'>
+    <div class='desc mb-3' [innerHTML]='film.desc'></div>
+    <div class='awards mb-3' *ngIf='film.awards?.length && film.awards[0]'>
+      Festivals &amp; Awards:
+      <div *ngFor='let award of film.awards'>
+        {{award}}
+      </div>
+    </div>
+    <div class='sponsors mb-3' *ngIf='film.sponsors?.length && film.sponsors[0]'>
+      Sponsors:
+      <div *ngFor='let sponsor of film.sponsors'>
+        {{sponsor}}
+      </div>
+    </div>
+    <div class='mb-3' *ngIf='filmDates'>
+      <h3>Showings</h3>
+      <div *ngFor='let filmDate of filmDates' class='mb-1'>
+        <div>
+          <strong>{{filmDate.date | date: 'mediumDate'}}</strong>
+        </div>
+        <div class='d-sm-inline'>{{filmDate.times | times}}</div>
+        at <a *ngIf='filmDate.venueLink' [href]='filmDate.venueLink'>{{filmDate.venue}}</a>
+        <span *ngIf='!filmDate.venueLink'>{{filmDate.venue}}</span>
+      </div>
+    </div>
+  </div>
+  <div class='col-sm-4' *ngIf='film.director || film.year'>
+    <a class='btn btn-block btn-primary mb-3' *ngIf='film.ticket' (click)='buyTicket()'>BUY TICKETS</a>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th colspan='2'>Movie Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf='film.director'>
+          <th>Director:</th>
+          <td>{{film.director}}</td>
+        </tr>
+        <tr *ngIf='film.country'>
+          <th>Country:</th>
+          <td>{{film.country}}</td>
+        </tr>
+        <tr *ngIf='film.year'>
+          <th>Year:</th>
+          <td>{{film.year}}</td>
+        </tr>
+        <tr *ngIf='film.runtime'>
+          <th>Runtime:</th>
+          <td>{{film.runtime}}</td>
+        </tr>
+        <tr *ngIf='film.lang'>
+          <th>Language:</th>
+          <td>{{film.lang}}</td>
+        </tr>
+        <tr *ngIf='film.genre && (film.genre | genreDisplay).length'>
+          <th>Genre:</th>
+          <td>{{film.genre | genreDisplay}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

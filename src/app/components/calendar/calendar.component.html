@@ -1,0 +1,9 @@
+<h3>{{currentDate | date: 'MMMM y'}}</h3>
+<table class='calendar'>
+  <tr *ngFor='let date of dates'>
+    <td class='date' *ngFor='let d of date' (click)='navigate(d)' [class.strong]='hasFilms(d)' [class.today]='d === today' [class.active]='d === currentDateFilter'
+      [title]='d === today ? "Today" : ""'>
+      <a>{{d}}</a>
+    </td>
+  </tr>
+</table>

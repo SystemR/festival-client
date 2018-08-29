@@ -1,0 +1,24 @@
+.date {
+  width: 20px;
+  text-align: right;
+  border-radius: 3px;
+  cursor: pointer;
+  a {
+    display: block;
+    padding: 5px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+  &.today {
+    background: #f1f1f1;
+  }
+  &.active {
+    color: #007bff;
+    font-weight: bold;
+  }
+  &.strong {
+    font-weight: bold;
+  }
+}

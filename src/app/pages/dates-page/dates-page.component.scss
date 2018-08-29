@@ -1,0 +1,13 @@
+.filter {
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    display: none;
+  }
+
+  .filter {
+    float: none;
+  }
+}

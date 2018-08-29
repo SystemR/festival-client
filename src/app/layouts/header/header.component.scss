@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  padding: 15px 35px;
+}
+
+.heading {
+  height: 50px;
+  line-height: 50px;
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  font-size: 24px;
+}
+
+img {
+  height: 100%;
+  margin-right: 25px;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+.title {
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  :host {
+    padding: 5px 15px;
+  }
+
+  .heading {
+    font-size: 16px;
+    text-align: center;
+    height: auto;
+    line-height: 35px;
+  }
+
+  .subtitle {
+    display: block;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    clear: both;
+  }
+}

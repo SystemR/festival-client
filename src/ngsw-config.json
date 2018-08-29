@@ -1,0 +1,24 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": ["/favicon.ico", "/index.html", "/*.css", "/*.js"],
+        "urls": [
+          "https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": ["/assets/**"],
+        "urls": ["https://static.stumblepie.com/films/**/*"]
+      }
+    }
+  ]
+}
